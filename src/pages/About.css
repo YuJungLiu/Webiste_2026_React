@@ -1,0 +1,313 @@
+/* 設定基礎字體大小為 16px (1rem = 16px) */
+.about-wrapper {
+  font-family: 'Manrope', sans-serif;
+  max-width: 62.5rem; /* 1000px */
+  margin: 0 auto;
+  padding: calc(4rem + 2vw) calc(1rem + 2vw);
+  color: #6a6a6a;
+  overflow-x: hidden;
+}
+
+/* --- Hero Section --- */
+.profile-hero {
+  display: flex;
+  align-items: center;
+  gap: calc(3rem + 10vw);
+  margin-bottom: calc(4rem + 4vw);
+}
+
+.profile-img-container {
+  flex: 0.5 0 calc(15rem + 5vw); /* 動態縮放照片大小 */
+  max-width: 25rem;
+  aspect-ratio: 1 / 1;
+  background-color: #e5dfd3;
+  border-radius: 1rem 1rem 10rem 1rem;
+  overflow: hidden;
+}
+
+.profile-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.name-group {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.name-en { 
+  font-size: calc(1.4rem + 0.2vw); /* 流體字體 */
+  font-weight: 800; 
+  letter-spacing: 0.0825rem; 
+}
+
+.name-zh { 
+  font-size: calc(1rem + 0.4vw); 
+  font-weight: 500; 
+  color: #666; 
+}
+
+/* --- Contact Section --- */
+.contact-container {
+  display: flex;
+  flex-direction: column; /* 讓「按鈕列」與「敘述文字」上下分開 */
+  align-items: flex-start;
+  gap: 2.5rem; /* 按鈕跟文字的間距 */
+}
+
+.social-links {
+  display: flex;
+  flex-direction: row; /* 關鍵：確保兩個按鈕是左右併排 */
+  align-items: center;
+  gap: 1rem; /* 兩個按鈕之間的間距 */
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem; /* 調整按鈕大小 */
+  height: 1rem;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.social-icon:hover {
+  filter: invert(1);
+  opacity: 0.6;
+}
+
+.profile-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+  max-width: 30rem;
+  margin: 0;
+}
+
+/* --- 手機響應式 --- */
+@media (max-width: 768px) {
+
+  .profile-img-container {
+  border-radius: 1rem 1rem 0rem 1rem;
+  max-height: 26vh;
+  }
+  /* 1. 隱藏中文名稱 */
+  .name-zh {
+    display: none;
+  }
+
+  /* 2. 手機版字體縮放 */
+  .name-en {
+    font-size: 1.4rem;
+    text-align: center;
+    letter-spacing: 0rem; 
+  }
+
+  /* 3. 置中對齊 */
+  .profile-hero {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .name-group {
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-container {
+    align-items: center; /* 全部置中 */
+    text-align: center;
+    gap: 1rem; 
+  }
+
+  .social-links {
+    justify-content: center;
+    gap: 0.8rem; /* 兩個按鈕之間的間距 */
+  }
+
+  .social-icon {
+  display: flex;
+  width: 0.9rem;
+  height: 0.9rem;
+  }
+
+  .profile-description {
+  font-size: 0.8rem;
+  color: #666;
+  margin: 0;
+}
+}
+
+/* --- Resume Layout --- */
+.resume-row {
+  display: flex;
+  gap: 2.5rem;
+  margin-bottom: 5rem;
+  border-top: 0.0625rem solid #eee;
+  padding-top: 2.5rem;
+}
+
+.row-title {
+  flex: 0 0 12.5rem;
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  margin: 0; /* 確保標題本身沒有預設 margin 影響對齊 */
+  line-height: 1.4; /* 讓兩邊的 line-height 接近 */
+  display: flex;
+  align-items: baseline; 
+}
+
+.row-content {
+  flex: 1;
+  margin-top: -1.1rem;
+}
+
+.resume-item {
+  margin-bottom: 2.5rem;
+}
+
+.resume-item:first-child {
+  margin-top: 0;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline; /* 確保電腦版名字與時間底部對齊 */
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.title-group {
+  display: flex;
+  flex-direction: column; /* 強制垂直排列 */
+  gap: 0.6rem; /* 職稱與公司之間的微小間距 */
+}
+
+.item-company {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #8a8271; /* 這裡換成你喜歡的顏色，例如藍色或主視覺色 */
+  opacity: 0.9;
+}
+
+.item-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #6a6a6a;
+  justify-content: flex-start;
+  line-height: 1.4;
+  flex: 1;
+}
+
+.item-year {
+  color: #888;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.item-desc {
+  font-size: 0.9375rem;
+  color: #666;
+  max-width: 35rem;
+  line-height: 1.6;
+}
+
+.desc-link {
+  color: #8a8271; /* 藍色 */
+  text-decoration: none;
+  border-bottom: 1px solid #8a8271;
+  transition: border-bottom 0.2s;
+}
+
+.desc-link:hover {
+  border-bottom: 1px solid #8a8271;
+}
+
+
+/* --- 手機響應式 (Mobile Optimized) --- */
+@media (max-width: 48rem) { /* 768px */
+  .about-wrapper {
+    padding: 0 1.25rem 3.75rem 1.25rem;
+  }
+
+  /* Profile 置中 */
+  .profile-hero {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 4rem;
+  }
+
+  .profile-img-container {
+    flex: none;
+    width: 15rem; /* 手機版固定一個適中大小 */
+    border-radius:0.7rem 0.7rem 8rem 0.7rem;
+    aspect-ratio: 1 / 1;
+  }
+
+  .name-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  /* 經歷大標題：最上方、置中、無裝飾線 */
+  .resume-row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 2rem;
+  }
+
+  .row-title {
+    flex: none;
+    width: 100%;
+    margin-bottom: 2.5rem;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  /* 經歷內容項目 */
+  .resume-item {
+    text-align: left; /* 內文保持左對齊以便閱讀 */
+    width: 100%;
+  }
+
+  .item-header {
+    flex-direction: column; /* 名字與年份上下排 */
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .item-year {
+    order: -1; /* 年份在職稱上方 */
+    color: #007AFF; /* 點綴色 */
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+
+  .item-title {
+    font-size: 1.05rem;
+  }
+
+  .item-desc {
+    font-size: 0.9rem;
+    margin-top: 0.625rem;
+  }
+}
