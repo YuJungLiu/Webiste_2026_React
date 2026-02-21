@@ -1,0 +1,60 @@
+:root {
+  --nav-font-size: calc(0.7rem + 0.1vw);
+  --nav-color: #6A6A6A;
+  --nav-active-color: #313131;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.sticky-nav {
+  position: fixed;
+  right: 5vw;       /* 距離右側的呼吸感 */
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;      
+  flex-direction: row; /* 文字在左，線在右 */
+  align-items: center; 
+  gap: 20px;          /* 文字跟線的距離 */
+  z-index: 9999;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* 文字向右對齊，靠近線條 */
+  gap: 1.5rem;          /* 項目之間的垂直距離 */
+}
+
+.nav-list a {
+  text-decoration: none;
+  font-family: 'Manrope', sans-serif;
+  color: #313131;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;  
+}
+
+.nav-list a:hover {
+  color: #1a1a1a;
+  font-weight: 600;
+  transform: translateX(-5px); /* 稍微往左移一點點的動態感 */
+}
+
+/* 那條唯一的靈魂線條 */
+.nav-line {
+  width: 1px;
+  height: 25vh;        /* 線條長度，根據你的偏好調整 */
+  background-color: #e0e0e0;
+  flex-shrink: 0;      
+}
+
+@media (max-width: 768px) {
+  .sticky-nav {
+    display: none; /* 手機端保持乾淨 */
+  }
+}

@@ -5,7 +5,7 @@
 
 .game-display-section {
   width: 100%;
-  padding: 2.5rem 6rem  0rem 6rem;
+  padding: 2.5rem 6rem  8rem 6rem;
   background: #FCFCFC;
 
     /* background: linear-gradient(0deg, rgba(252, 252, 252, 1) 0%, rgba(239, 236, 230, 1) 100%); */
@@ -19,7 +19,7 @@
 
 @media (max-width: 768px) {
 .game-display-section {
-  padding: 2.5rem 3rem  0rem 3rem;
+  padding: 2.5rem 3rem  3rem 3rem;
 }
 
 .ux-display-section {

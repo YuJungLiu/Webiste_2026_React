@@ -16,3 +16,18 @@ html, body, #root, .App {
     background-color: #FCFCFC;
     overflow-x: hidden;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+    position: sticky; /* 或 fixed */
+    top: 0;
+    z-index: 1000; /* 確保大於背景的 0 */
+}
+
+footer {
+    position: relative;
+    z-index: 10;
+}
