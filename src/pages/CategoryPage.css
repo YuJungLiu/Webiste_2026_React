@@ -1,68 +1,94 @@
-.gradient-top-half {
-  background: linear-gradient(180deg, #FCFCFC 0%, #EFECE6 100%);
+.category-page-container {
   width: 100%;
-  /* margin-top: -1rem; */
+  position: relative;
+  background-color: #FCFCFC;
 }
 
-.gradient-bottom-half {
-  background: linear-gradient(180deg, #EFECE6 0%, #FCFCFC 100%);
+/* 頂部漸層：淺(#FCFCFC) -> 深(#EFECE6) -> 淺(#FCFCFC) */
+.gradient-background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 80vh; /* 只覆蓋頁面上半部 */
+  background: linear-gradient(180deg, #FCFCFC 0%, #EFECE6 50%, #FCFCFC 100%);
+  z-index: 0;
+  pointer-events: none;
 }
 
-.page-top, .page {
+.category-content-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.page {
   width: 100%;
-  /* background: transparent; */
   display: flex;
   flex-direction: column; 
   align-items: center; 
+  /* 手機版頂部 Header 距離 */
+  padding: 6rem 3rem 1.5rem 3rem; 
 }
 
-/* .page-top {
-    padding: 2rem 3rem 0rem 3rem; 
-} */
+.page:first-of-type {
+    padding-top: 2rem; 
+}
 
-.page {
-    padding: 2rem 3rem 0rem 3rem; 
+.page:last-of-type {
+    padding-bottom: 5rem; 
 }
 
 #section-vr, #section-experimental {
-  background-color: #FCFCFC;
+  background-color: transparent;
 }
 
 .page-title {
   color: #6A6A6A;
   font-family: 'Manrope', sans-serif;
-  font-size: calc(0.6rem + 0.6vw);
+  font-size: calc(0.7rem + 0.6vw);
   font-weight: bold;
   margin: 0; 
   line-height: 1.8rem; 
   animation: text-breath 10s ease-in-out infinite;
-  will-change: opacity; 
+  will-change: opacity 80%; 
 }
 
 .page-quote {
   color: #6A6A6A;
   font-family: 'Manrope', sans-serif;
-  font-size: calc(0.6rem + 0.4vw);
+  font-size: calc(0.7rem + 0.4vw);
   font-weight: 300;
   margin: 0; 
   margin-top: 0.5rem; 
+  /* 增加大標題距離下面第一個 Project 的距離 */
+  margin-bottom: 1.5rem; 
   animation: text-breath 10s ease-in-out infinite;
-  will-change: opacity; 
+  will-change: opacity 80%; 
 }
 
 @media (min-width: 768px) {
-  .page-top {
-    padding: 10em 6rem 0rem 6rem; 
-    display: flex;
-    align-items: flex-start;
-  }
+
+
   .page {
-    padding: 5rem 6rem 2rem 6rem; 
+    padding: 8rem 8rem 2rem 8rem; /* 這裡的 6rem 是其他頁面的間距 */
     align-items: flex-start;
-  }
+    display: flex; /* 確保 flex 生效 */
+    flex-direction: column;
+}
+
+/* 唯獨「第一個」page 增加頂部間距，用來避開 Header */
+.page:first-of-type {
+    padding-top: 12rem; 
+}
 
   .page-quote {
     margin-top: 1.6rem; 
+    /* 電腦版大標題距離下面第一個 Project 的距離 */
+    margin-bottom: 4rem; 
   }
+}
+
+@keyframes text-breath {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
 }

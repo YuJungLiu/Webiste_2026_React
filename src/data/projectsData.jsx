@@ -4,19 +4,23 @@
     sections: [
       {
         id: "section-mobile",
-        label: "Mobile Games",
-        quote: "Small screens, big adventures.",
+        label: "Game",
+        quote: "Enjoy, and have fun !",
+        isTwoCols: true,
         projects: [
-          { id: 'wan', tag: 'Mobile Puzzle Game', title: 'Wando', img: '/assets/Wan_2.png', desc: 'A magical forest adventure.' },
-          { id: 'tiny', tag: 'Adventure Parkour Game', title: 'Tiny Criminals', img: '/assets/Tiny_2.png', desc: 'Fast-paced escape game.' }
+          { id: 'wan', tag: 'Mobile Puzzle Game', title: 'Wando', img: '/assets/Wan_2.png', fullWidth: true },
+          { id: 'tiny', tag: 'Adventure Parkour Game', title: 'Tiny Criminals', img: '/assets/Tiny_2.png', fullWidth: false},
+          { id: 'no', tag: 'Simulation Game', title: 'No Signal', img: '/assets/No_2.png', fullWidth: false},
+          { id: 'psy', tag: 'Desktop Pet', title: 'Psyqualogy (Coming Soon)', img: '/assets/Psy_2.png', fullWidth: true },
         ]
       },
       {
         id: "section-vr",
         label: "Virtual Reality",
         quote: "Think beyond, for the future of gaming.",
+        isTwoCols: true,
         projects: [
-          { id: 'spe', tag: 'VR Experience', title: 'Space Walker', img: '/assets/Spe_2.png', desc: 'Exploring the unknown universe.' }
+          { id: 'spe', tag: 'MR Vocabulary Learning Game', title: 'Spelland', img: '/assets/Spe_1.png', fullWidth: false }
         ]
       },
       {
@@ -24,7 +28,8 @@
         label: "Experimental",
         quote: "Random happiness.",
         projects: [
-          { id: 'psy', tag: 'Web Interaction', title: 'Psychic Test', img: '/assets/Psy_2.png', desc: 'A simple interactive experiment.' }
+          { id: 'fire', tag: 'Game Poem', title: 'Moment', img: '/assets/Fire_1.png', fullWidth: false},
+          { id: 'pop', tag: '2D Platformer Game', title: 'Popcorn Projection', img: '/assets/Pop_1.png', fullWidth: false}
         ]
       }
     ]
@@ -34,20 +39,13 @@
     sections: [
       {
         id: "section-app",
-        label: "App Design",
-        quote: "Focus on user-centric solutions.",
+        label: "Service Design",
+        quote: "More than thoughtful.",
         projects: [
-          { id: 'avo', tag: 'App Design', title: 'AvoApp', img: '/assets/Avo_1.png', desc: 'Healthy lifestyle tracker.' }
+          { id: 'yam', tag: 'Music Education Rebranding', title: 'Yamaha Adults', img: '/assets/Yam_1.png', fullWidth: false },
+          { id: 'pla', tag: 'Sustainable Green Roof Gardening Service', title: 'Plantoholic', img: '/assets/Pla_2.png', fullWidth: false }
         ]
       },
-      {
-        id: "section-web",
-        label: "Web Design",
-        quote: "Modernizing digital experiences.",
-        projects: [
-          { id: 'udn', tag: 'Web News', title: 'Udn Redesign', img: '/assets/Udn_1.png', desc: 'News reading experience.' }
-        ]
-      }
     ]
   },
   media: {
@@ -58,7 +56,7 @@
         label: "Sound & Art",
         quote: "The harmony of code and noise.",
         projects: [
-          { id: 'no1', tag: 'Installation', title: 'Digital Echo', img: '/assets/No_1.png', desc: 'Sound reactive visuals.' }
+          { id: 'no1', tag: 'Installation', title: 'Digital Echo', img: '/assets/No_1.png', desc: 'Sound reactive visuals.', fullWidth: false }
         ]
       }
     ]

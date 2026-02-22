@@ -13,19 +13,19 @@ const CategoryPage = ({ categoryType }) => {
 
   if (!data) return <div className="loading">Loading...</div>;
 
-  return (
+return (
     <div className={`category-page-container ${categoryType}-theme`}>
       <div className="gradient-background-overlay" />
-      
       <SubNav sections={data.sections} />
       
       <main className="category-content-wrapper">
         {data.sections.map((section) => (
-          <section key={section.id} id={section.id} className="page"> {/* 類別名稱改回 page */}
-            <h1 className="page-title">{section.label}</h1>
+          <section key={section.id} id={section.id} className="page">
+            <p className="page-title">{section.label}</p>
             <p className="page-quote">{section.quote}</p>
             
-            <div className="project-row"> {/* 使用原本的 project-row */}
+            {/* 這裡統一使用 project-row 即可 */}
+            <div className="project-row">
               {section.projects.map(proj => (
                 <ProjectCard key={proj.id} project={proj} />
               ))}
