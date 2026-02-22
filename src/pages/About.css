@@ -150,12 +150,12 @@
   display: flex;
   /* margin-bottom: 2rem; */
   border-top: 0.0625rem solid #eee;
-  padding-top: 2rem;
+  padding-top: 5rem;
 }
 
 .row-title {
   flex: 0 0 12.5rem;
-  font-size: calc(0.7rem + 0.3vw); 
+  font-size: calc(0.8rem + 0.3vw); 
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.15rem;
@@ -191,14 +191,14 @@
 }
 
 .item-company {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 500;
   color: #8a8271; /* 這裡換成你喜歡的顏色，例如藍色或主視覺色 */
   opacity: 0.9;
 }
 
 .item-title {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 700;
   line-height: 1.2;
   color: #6a6a6a;
@@ -208,14 +208,14 @@
 
 .item-year {
   color: #888;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 500;
   white-space: nowrap;
-  text-align: left;
+  text-align: right;
 }
 
 .item-desc {
-  font-size: 0.86rem;
+  font-size: 0.9rem;
   color: #666;
   max-width: 35rem;
   line-height: 1.6;
@@ -235,6 +235,11 @@
 
 /* --- 手機響應式 (Mobile Optimized) --- */
 @media (max-width: 768px) { /* 768px */
+
+  .resume-row {
+  padding-top: 2rem;
+}
+
   .about-wrapper {
     padding: 0 1.5rem 3.75rem 1.5rem;
     color: #4a4a4a;
