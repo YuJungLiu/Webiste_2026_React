@@ -10,8 +10,8 @@ html {
 
 .sticky-nav {
   position: fixed;
-  right: 5vw;       /* 距離右側的呼吸感 */
-  top: 50%;
+  right: 3vw;       /* 距離右側的呼吸感 */
+  top: 40%;
   transform: translateY(-50%);
   display: flex;      
   flex-direction: row; /* 文字在左，線在右 */
@@ -27,29 +27,29 @@ html {
   display: flex;
   flex-direction: column;
   align-items: flex-end; /* 文字向右對齊，靠近線條 */
-  gap: 1.5rem;          /* 項目之間的垂直距離 */
+  gap: 1.2rem;          /* 項目之間的垂直距離 */
 }
 
 .nav-list a {
   text-decoration: none;
   font-family: 'Manrope', sans-serif;
-  color: #313131;
-  font-size: 0.85rem;
+  color: #919191;
+  font-size: 0.7rem;
   transition: all 0.3s ease;
   white-space: nowrap;  
 }
 
 .nav-list a:hover {
-  color: #1a1a1a;
-  font-weight: 600;
-  transform: translateX(-5px); /* 稍微往左移一點點的動態感 */
+  color: #6A6A6A;
+  font-weight: 500;
+  transform: translateX(-5px); 
 }
 
 /* 那條唯一的靈魂線條 */
 .nav-line {
   width: 1px;
-  height: 25vh;        /* 線條長度，根據你的偏好調整 */
-  background-color: #e0e0e0;
+  height: 6rem;        /* 線條長度，根據你的偏好調整 */
+  background-color: #b6b6b6;
   flex-shrink: 0;      
 }
 

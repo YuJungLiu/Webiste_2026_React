@@ -19,7 +19,6 @@ const SubNav = ({ sections }) => {
 
   return (
       <nav className="sticky-nav">
-        {/* 左邊：文字列表 */}
         <ul className="nav-list">
           {sections.map((section) => (
             <li key={section.id}>
@@ -29,8 +28,6 @@ const SubNav = ({ sections }) => {
             </li>
           ))}
         </ul>
-
-        {/* 右邊：唯一的一條長線 */}
         <div className="nav-line"></div>
       </nav>
   );
