@@ -49,7 +49,7 @@
 .hero-title {
   color: #414141;
   font-family: 'Manrope', sans-serif;
-  font-size: calc(2.2rem + 0.5vw);
+  font-size: calc(1.6rem + 0.3vw);
   font-weight: 800;
   margin-top: 2rem;
   line-height: 1.1;
@@ -71,6 +71,21 @@
   font-weight: 500;
   letter-spacing: 0.1em;
   padding-top: 2rem;
+}
+
+.title-link {
+  text-decoration: none; /* 移除底線 */
+  color: #4d483f;        /* 繼承父層顏色 */
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover 效果：讓使用者知道這是可以點的 */
+.title-link:hover {
+  opacity: 1;
+  color: #6a6a6a; 
+  text-decoration: underline; /* 或是你要加回底線也可以，看你設計 */
 }
 
 /* --- 製作資訊區 (Contribution & Credits) --- */
@@ -192,13 +207,13 @@
   }
 
   .hero-subtitle {
-    font-size: 0.9rem;
+    font-size: 0.75rem;
     margin: 0.5rem auto 0 auto;
   }
 
   .hero-year {
     font-size: 0.8rem;
-    padding-top: 0rem;
+    padding-top: 1rem;
   }
 
   /* 2. 製作資訊區 (Meta)：恢復置左 */
@@ -225,7 +240,7 @@
 
   .meta-value {
     font-family: 'Manrope', sans-serif;
-    font-size: 0.75rem;
+    font-size: 0.65rem;
     color: #919191;
     line-height: 1.5;
   }
@@ -243,6 +258,7 @@
 
   .detail-description {
     display: none; /* 隱藏描述文字 */
+    font-size: 0.7rem;
   }
 
   .detail-gallery {

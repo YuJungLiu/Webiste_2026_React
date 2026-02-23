@@ -18,9 +18,10 @@
 }
 
 .project-image-wrapper {
+    position: relative; /* 必備：讓內部的 overlay 能絕對定位 */
     width: 100%;
-    overflow: hidden; /* 關鍵：裁切放大後的圖片 */
-    border-radius: calc(0.3rem + 0.3vw); /* 保持你原本的圓角設定 */
+    overflow: hidden;    /* 關鍵：這會幫內部的遮罩裁切圓角 */
+    border-radius: calc(0.3rem + 0.3vw); 
     margin-bottom: 0.3rem;
 }
 
@@ -109,4 +110,60 @@
     color: #818181;
 }
     
+}
+
+
+
+.project-item.coming-soon {
+  cursor: default;
+  opacity: 1;
+  filter: grayscale(0.6); /* 帶點黑白感，很有質感 */
+  transition: opacity 0.3s ease;
+}
+
+/* 關閉 Coming Soon 卡片的圖片放大效果（可選） */
+.project-item.coming-soon:hover img {
+  transform: none;
+  opacity: 1;
+}
+
+/* 圖片內部的 Coming Soon 文字覆蓋層 */
+.coming-soon-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 這裡不再單獨設定圓角，因為父層 overflow: hidden 會處理 */
+    background: #7a6e541c; /* 稍微加深一點點，更有質感 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    backdrop-filter: blur(4px); 
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.coming-soon-overlay span {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 0.3rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.project-item.coming-soon img {
+    filter:  brightness(0.8); 
+}
+
+@media (max-width: 768px) {
+
+.coming-soon-overlay span {
+    font-size: 0.6rem;
+
+}
 }

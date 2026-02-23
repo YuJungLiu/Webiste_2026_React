@@ -31,11 +31,24 @@ const handleScrollToTop = () => {
           <img src={details.coverImg} alt={project.title} className="hero-img" />
         </div>
 
-        <header className="detail-header-section">
-          <h1 className="hero-title">{project.title}</h1>
-          <p className="hero-subtitle">{details.subtitle}</p>
-          {details.year && <p className="hero-year">{details.year}</p>}
-        </header>
+      <header className="detail-header-section">
+        <h1 className="hero-title">
+          {details.externalLink ? (
+            <a 
+              href={details.externalLink} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="title-link"
+            >
+              {project.title}
+            </a>
+          ) : (
+            project.title
+          )}
+        </h1>
+        <p className="hero-subtitle">{details.subtitle}</p>
+        {details.year && <p className="hero-year">{details.year}</p>}
+      </header>
 
         <section className="detail-meta-section">
           <div className="meta-grid">

@@ -28,7 +28,7 @@ function App() {
           {/* 通用分類路由 */}
           <Route path="/ux" element={<CategoryPage categoryType="ux" />} />
           <Route path="/game" element={<CategoryPage categoryType="game" />} />
-
+          <Route path="/media" element={<CategoryPage categoryType="media" />} />
           <Route path="/project/:projectId" element={<ProjectDetail />} />
         </Routes>
         <Footer />
