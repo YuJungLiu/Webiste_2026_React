@@ -33,7 +33,7 @@
 }
 
 .project-item:hover img {
-    transform: scale(1.05) ; /* 放大 5% */
+    transform: scale(1.1) ; /* 放大 5% */
     opacity: 0.9;           /* 稍微變暗/透，增加互動感 */
 }
 

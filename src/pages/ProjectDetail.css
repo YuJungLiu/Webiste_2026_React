@@ -1,0 +1,114 @@
+﻿.project-detail-container {
+  width: 100%;
+  background-color: #FCFCFC;
+  padding-bottom: 5rem;
+}
+
+/* 封面圖與漸層 */
+.project-hero {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-gradient-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  /* 延續 Category Page 的設計語言 */
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 3rem 10%;
+}
+
+.hero-title {
+  color: white;
+  font-size: 3rem;
+  margin: 0;
+}
+
+.hero-subtitle {
+  color: rgba(255,255,255,0.8);
+  font-size: 1.2rem;
+}
+
+/* 資訊區塊 */
+.project-info-section {
+  padding: 4rem 15%;
+  background-color: #EFECE6; /* 使用你現有的深色調作區隔 */
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.info-item h3 {
+  font-size: 0.9rem;
+  color: #6A6A6A;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+/* 主內容與 70% 寬度控制 */
+.project-main-content, .project-screenshots {
+  width: 70%;
+  margin: 4rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 的黃金比例 */
+  height: 0;
+  margin-bottom: 2rem;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px; /* 稍微加一點圓角，看起來更現代 */
+}
+
+.description-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.screenshot-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* 📱 手機端優化 (Mobile-First UX) */
+@media (max-width: 768px) {
+  .project-hero { height: 40vh; }
+  .hero-title { font-size: 2rem; }
+  
+  .info-grid { grid-template-columns: 1fr; }
+  
+  .project-main-content, .project-screenshots {
+    width: 90%; /* 手機端放寬到 90% 方便閱讀 */
+    margin: 2rem auto;
+  }
+}
