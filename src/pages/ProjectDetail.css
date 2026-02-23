@@ -8,10 +8,10 @@
 
 .gradient-background-overlay {
   position: absolute;
-  top: 0;
+  top: 40rem;
   left: 0;
   width: 100%;
-  height: 150vh; /* 漸層延伸長度 */
+  height: 110vh; /* 漸層延伸長度 */
   background: linear-gradient(180deg, #FCFCFC 0%, #EFECE6 50%, #FCFCFC 100%);
   z-index: 0;
   pointer-events: none;
@@ -47,7 +47,7 @@
 }
 
 .hero-title {
-  color: #313131;
+  color: #414141;
   font-family: 'Manrope', sans-serif;
   font-size: calc(2.2rem + 0.5vw);
   font-weight: 800;
@@ -58,8 +58,8 @@
 
 .hero-subtitle {
   color: #6a6a6a;
-  font-family: 'Lora', serif;
-  font-size: 1.45rem;
+  font-family: 'Manrope', sans-serif;
+  font-size: calc(0.8rem + 0.2vw);
   font-style: italic;
   margin: 1rem 0 0.5rem 0;
 }
@@ -70,6 +70,7 @@
   font-size: 0.95rem;
   font-weight: 500;
   letter-spacing: 0.1em;
+  padding-top: 2rem;
 }
 
 /* --- 製作資訊區 (Contribution & Credits) --- */
@@ -89,7 +90,7 @@
 .meta-label {
   display: block;
   font-family: 'Manrope', sans-serif;
-  font-size: 0.75rem;
+  font-size: calc(0.7rem + 0.2vw); 
   font-weight: 700;
   color: #aaa;
   text-transform: uppercase;
@@ -98,9 +99,9 @@
 }
 
 .meta-value {
-  font-family: 'Lora', serif;
-  font-size: 1.1rem;
-  color: #333;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1rem;
+  color: #313131;
   line-height: 1.6;
 }
 
@@ -117,7 +118,7 @@
 /* YouTube 容器置中與比例 */
 .detail-video-box {
   width: 100%;
-  max-width: 1000px;
+  /* max-width: 1000px; */
   margin: 0 auto;
   aspect-ratio: 16 / 9;
   background-color: #000;
@@ -133,17 +134,19 @@
 }
 
 /* 描述文字閱讀優化 */
+
 .detail-description {
-  max-width: 850px;
-  margin: 0 auto;
-  font-family: 'Lora', serif;
-  font-size: 1.25rem;
-  line-height: 2.2;
-  color: #333;
+  width: 90%;
+  max-width: 90%; /* 讓它填滿 70% 空間，不留白 */
+  text-align: left;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8; /* 小間距：行與行之間的距離 */
+  color: #6a6a6a;
 }
 
 .detail-description p {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem; /* 大間距：段落與段落之間的距離 */
 }
 
 /* 截圖列表 */
@@ -187,7 +190,7 @@
 
   .meta-grid {
     grid-template-columns: 1fr; /* 單欄排版 */
-    gap: 2.5rem;
+    gap: 1rem;
   }
 
   .detail-main-content {
@@ -196,7 +199,62 @@
   }
 
   .detail-description {
-    font-size: 1.1rem;
-    line-height: 1.8;
+    display: none;
+  }
+}
+
+/* Back to top */
+
+.back-to-top-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 4rem 0 2rem 0; /* 與上方 Gallery 和下方 Footer 的間距 */
+  margin-top: 2rem;
+}
+
+.back-to-top-btn {
+  background: transparent;
+  border: 1px solid #d1d1d1; /* 淡淡的邊框 */
+  padding: 0.8rem 2.2rem;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #6a6a6a;
+  cursor: pointer;
+  border-radius: 50px; /* 圓角膠囊造型 */
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.back-to-top-btn .arrow-up {
+  transition: transform 0.4s ease;
+}
+
+/* Hover 效果：變深色，箭頭往上跳一下 */
+.back-to-top-btn:hover {
+  background-color: #222;
+  color: #fff;
+  border-color: #222;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.back-to-top-btn:hover .arrow-up {
+  transform: translateY(-3px);
+}
+
+/* 手機端微調 */
+@media (max-width: 768px) {
+  .back-to-top-container {
+    padding: 3rem 0 1rem 0;
+  }
+  .back-to-top-btn {
+    padding: 0.7rem 1.8rem;
+    font-size: 0.8rem;
   }
 }

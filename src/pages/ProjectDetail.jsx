@@ -7,6 +7,13 @@ const ProjectDetail = () => {
   const { projectId } = useParams();
   const project = getProjectById(projectId);
 
+const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // 這裡使用 smooth，因為是在同頁面內的導覽
+    });
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [projectId]);
@@ -17,23 +24,19 @@ const ProjectDetail = () => {
 
   return (
     <div className="project-detail-container">
-      {/* 複用 Category Page 的背景漸層 */}
       <div className="gradient-background-overlay" />
 
       <div className="project-detail-content-wrapper">
-        {/* 1. Hero 封面圖區 (純圖片，不疊文字) */}
         <div className="detail-hero">
           <img src={details.coverImg} alt={project.title} className="hero-img" />
         </div>
 
-        {/* 2. 標題資訊區 (位於圖片下方) */}
         <header className="detail-header-section">
           <h1 className="hero-title">{project.title}</h1>
           <p className="hero-subtitle">{details.subtitle}</p>
           {details.year && <p className="hero-year">{details.year}</p>}
         </header>
 
-        {/* 3. 製作資訊區 (Contribution & Credits) */}
         <section className="detail-meta-section">
           <div className="meta-grid">
             <div className="meta-item">
@@ -47,9 +50,7 @@ const ProjectDetail = () => {
           </div>
         </section>
 
-        {/* 4. 主內容區 (影片、介紹、截圖) */}
         <main className="detail-main-content">
-          {/* YouTube 影片 (條件渲染) */}
           {details.videoUrl && (
             <div className="detail-video-box">
               <iframe 
@@ -63,18 +64,30 @@ const ProjectDetail = () => {
             </div>
           )}
 
-          {/* 專案描述文字 (處理換行) */}
+          {/* --- 重點：更新後的描述渲染邏輯 --- */}
           <div className="detail-description">
-            {details.description.split('\n').map((line, i) => (
-              <p key={i}>{line}</p>
+            {details.description.split('\n\n').map((paragraph, i) => (
+              <p key={i}>
+                {paragraph.split('\n').map((line, j) => (
+                  <React.Fragment key={j}>
+                    {line}
+                    {j !== paragraph.split('\n').length - 1 && <br />}
+                  </React.Fragment>
+                ))}
+              </p>
             ))}
           </div>
 
-          {/* 作品集截圖清單 */}
           <div className="detail-gallery">
             {details.screenshots.map((img, idx) => (
               <img key={idx} src={img} alt={`Work ${idx}`} className="gallery-img" />
             ))}
+          </div>
+          <div className="back-to-top-container">
+            <button className="back-to-top-btn" onClick={handleScrollToTop}>
+              Back to Top
+              <span className="arrow-up">↑</span>
+            </button>
           </div>
         </main>
       </div>

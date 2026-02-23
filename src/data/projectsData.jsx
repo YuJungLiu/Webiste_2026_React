@@ -13,23 +13,34 @@
             tag: 'Mobile Puzzle Game', 
             title: 'Wando', 
             img: '/assets/Wan_2.png', 
-            fullWidth: true,
+            fullWidth: false,
             details: {
               coverImg: '/assets/Wan_3.png', 
-              subtitle: 'A magical puzzle adventure in the forest.',
-              contribution: 'Lead Game Designer, Programmer',
-              credits: 'Art: User A / Sound: User B',
-              videoUrl: 'https://www.youtube.com/embed/GD-1PSTsYtg?si=mGDYdKCr_URmwZvR', // 你提供的嵌入網址
-              description: `Wando 是一款充滿奇幻色彩的益智冒險遊戲。\n\n玩家需要操控主角在神秘的森林中解開重重謎題，透過獨特的物理互動機制，探索這個世界的真相。`,
+              subtitle: 'Mobile Indie Puzzle Game',
+              year: '2024',
+              contribution: 'Game Director (Game & Level, UIUX, Sound, Motion Designer), PR',
+              credits: '劉有容(Liu Yu-Jung), 白雅云(Pai Ya-Yun), 何政勳(Jason Ho)',
+              videoUrl: 'https://www.youtube.com/embed/GD-1PSTsYtg?si=mGDYdKCr_URmwZvR', 
+              description: `“Wando” is a therapeutic and artistic puzzle game. The game is themed around nature and ancient civilizations, and players can embark on adventure with protagonist "Kgoro" to experience various puzzles. 
+              
+              Using spells to transform plants and creating a path connecting the beginning and the endpoint. Through these actions, players can help Kgoro overcome challenges and continue his journey into the unknown.
+              
+              Honors |
+              2024 AppStore Regional Featured     'Today' recommendation & Banner
+              2023 Bahamut ACG Award     Merit
+              2023 Vision Get Wild Award     Silver`, 
               screenshots: [
-                '/assets/Wan_2.png',
-                '/assets/Wan_1.png'
+                '/assets/portfolio/Wan_P_1.jpg',
+                '/assets/portfolio/Wan_P_2.jpg',
+                '/assets/portfolio/Wan_P_3.jpg',
+                '/assets/portfolio/Wan_P_4.jpg',
+                '/assets/portfolio/Wan_P_5.jpg',
+                '/assets/portfolio/Wan_P_6.jpg',
               ]
             }
           },
           { id: 'tiny-criminals', tag: 'Adventure Parkour Game', title: 'Tiny Criminals', img: '/assets/Tiny_2.png', fullWidth: false},
-          { id: 'no-signal', tag: 'Simulation Game', title: 'No Signal', img: '/assets/No_2.png', fullWidth: false},
-          { id: 'psyqualogy', tag: 'Desktop Pet', title: 'Psyqualogy (Coming Soon)', img: '/assets/Psy_2.png', fullWidth: true },
+          // { id: 'psyqualogy', tag: 'Desktop Pet', title: 'Psyqualogy (Coming Soon)', img: '/assets/Psy_2.png', fullWidth: false },
         ]
       },
       {
@@ -46,6 +57,7 @@
         label: "Experimental",
         quote: "Random happiness.",
         projects: [
+          { id: 'no-signal', tag: 'Simulation Game', title: 'No Signal', img: '/assets/No_2.png', fullWidth: true},
           { id: 'moment', tag: 'Game Poem', title: 'Moment', img: '/assets/Fire_1.png', fullWidth: false},
           { id: 'popcorn-projection', tag: '2D Platformer Game', title: 'Popcorn Projection', img: '/assets/Pop_1.png', fullWidth: false}
         ]
