@@ -166,40 +166,96 @@
 
 /* --- 📱 手機端響應式校準 --- */
 @media (max-width: 768px) {
+
+  .gradient-background-overlay {
+  top: 25rem;
+  height: 60vh; 
+  }
   .detail-hero {
-    height: 45vh;
+    width: 100%;
+    height: 25vh; /* 寬扁比例 */
+    min-height: auto; 
   }
 
-  .detail-header-section,
-  .detail-meta-section,
-  .detail-main-content {
-    width: 90%; /* 手機端放寬比例 */
-  }
-
+  /* 1. 標題區域：維持置中 */
   .detail-header-section {
-    padding: 2.5rem 0 1rem 0;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 0 2rem 0;
+    text-align: center; /* 標題、副標、年份置中 */
   }
 
   .hero-title {
-    font-size: 2.2rem;
+    font-size: 1.3rem;
+    margin-top: 0.5rem;
+    color: #6a6a6a;
   }
 
   .hero-subtitle {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
+    margin: 0.5rem auto 0 auto;
+  }
+
+  .hero-year {
+    font-size: 0.8rem;
+    padding-top: 0rem;
+  }
+
+  /* 2. 製作資訊區 (Meta)：恢復置左 */
+  .detail-meta-section {
+    width: 85%;
+    margin: 0 auto;
+    padding: 4rem 0;
+    text-align: left; /* 關鍵：讓 Individual Contribution 那些資訊靠左 */
   }
 
   .meta-grid {
     grid-template-columns: 1fr; /* 單欄排版 */
-    gap: 1rem;
+    gap: 1.5rem; /* 增加一點間距 */
   }
 
+  .meta-label {
+    display: block;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.65rem; 
+    font-weight: 700;
+    color: #bbbbbb;
+    margin-bottom: 0.5rem; /* 標籤與內容的距離 */
+  }
+
+  .meta-value {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.75rem;
+    color: #919191;
+    line-height: 1.5;
+  }
+
+  /* 3. 主內容與圖片區 */
   .detail-main-content {
-    gap: 4rem;
+    width: 90%;
+    margin: 0 auto;
+    gap: 2rem;
     padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 讓內容容器置中 */
   }
 
   .detail-description {
-    display: none;
+    display: none; /* 隱藏描述文字 */
+  }
+
+  .detail-gallery {
+    width: 100%;
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gallery-img {
+    width: 100%;
+    height: auto;
   }
 }
 
@@ -251,10 +307,10 @@
 /* 手機端微調 */
 @media (max-width: 768px) {
   .back-to-top-container {
-    padding: 3rem 0 1rem 0;
+    padding: 0rem 0 0.1rem 0;
   }
   .back-to-top-btn {
     padding: 0.7rem 1.8rem;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 }

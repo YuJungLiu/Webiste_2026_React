@@ -18,7 +18,7 @@
               coverImg: '/assets/Wan_3.png', 
               subtitle: 'Mobile Indie Puzzle Game',
               year: '2024',
-              contribution: 'Game Director (Game & Level, UIUX, Sound, Motion Designer), PR',
+              contribution: 'Game Director (Game & Level, UIUX, Sound, Motion Designer)',
               credits: '劉有容(Liu Yu-Jung), 白雅云(Pai Ya-Yun), 何政勳(Jason Ho)',
               videoUrl: 'https://www.youtube.com/embed/GD-1PSTsYtg?si=mGDYdKCr_URmwZvR', 
               description: `“Wando” is a therapeutic and artistic puzzle game. The game is themed around nature and ancient civilizations, and players can embark on adventure with protagonist "Kgoro" to experience various puzzles. 
