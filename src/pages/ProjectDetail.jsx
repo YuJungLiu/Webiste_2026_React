@@ -11,32 +11,29 @@ const ProjectDetail = () => {
     window.scrollTo(0, 0);
   }, [projectId]);
 
-  if (!project || !project.details) return <div className="loading">Loading...</div>;
+  if (!project || !project.details) return <div className="loading">Loading Project...</div>;
 
   const { details } = project;
 
   return (
     <div className="project-detail-container">
-      {/* 核心：複用 Category Page 的背景漸層效果 */}
+      {/* 複用 Category Page 的背景漸層 */}
       <div className="gradient-background-overlay" />
 
-      {/* 使用 Wrapper 確保內容在漸層之上 */}
       <div className="project-detail-content-wrapper">
-        
-        {/* 1. Hero 區 */}
+        {/* 1. Hero 封面圖區 (純圖片，不疊文字) */}
         <div className="detail-hero">
-          <div className="hero-image-box">
-            <img src={details.coverImg} alt={project.title} className="hero-img" />
-          </div>
-          <div className="hero-gradient-overlay">
-            <div className="hero-header-text">
-              <h1 className="hero-title">{project.title}</h1>
-              <p className="hero-subtitle">{details.subtitle}</p>
-            </div>
-          </div>
+          <img src={details.coverImg} alt={project.title} className="hero-img" />
         </div>
 
-        {/* 2. 資訊區 (70% 寬度) */}
+        {/* 2. 標題資訊區 (位於圖片下方) */}
+        <header className="detail-header-section">
+          <h1 className="hero-title">{project.title}</h1>
+          <p className="hero-subtitle">{details.subtitle}</p>
+          {details.year && <p className="hero-year">{details.year}</p>}
+        </header>
+
+        {/* 3. 製作資訊區 (Contribution & Credits) */}
         <section className="detail-meta-section">
           <div className="meta-grid">
             <div className="meta-item">
@@ -50,29 +47,33 @@ const ProjectDetail = () => {
           </div>
         </section>
 
-        {/* 3. 內容區 (70% 寬度) */}
+        {/* 4. 主內容區 (影片、介紹、截圖) */}
         <main className="detail-main-content">
+          {/* YouTube 影片 (條件渲染) */}
           {details.videoUrl && (
             <div className="detail-video-box">
               <iframe 
                 src={details.videoUrl} 
-                title="Project Video"
+                title="YouTube video player" 
                 frameBorder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerPolicy="strict-origin-when-cross-origin" 
                 allowFullScreen
               ></iframe>
             </div>
           )}
 
+          {/* 專案描述文字 (處理換行) */}
           <div className="detail-description">
             {details.description.split('\n').map((line, i) => (
               <p key={i}>{line}</p>
             ))}
           </div>
 
+          {/* 作品集截圖清單 */}
           <div className="detail-gallery">
             {details.screenshots.map((img, idx) => (
-              <img key={idx} src={img} alt={`Slide ${idx}`} className="gallery-img" />
+              <img key={idx} src={img} alt={`Work ${idx}`} className="gallery-img" />
             ))}
           </div>
         </main>

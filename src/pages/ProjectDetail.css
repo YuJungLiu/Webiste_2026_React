@@ -1,127 +1,129 @@
-﻿.project-detail-container {
+﻿/* --- 基礎容器與漸層背景 --- */
+.project-detail-container {
   width: 100%;
   position: relative;
-  background-color: #FCFCFC; /* 頁面基礎底色 */
+  background-color: #FCFCFC;
   overflow-x: hidden;
 }
 
-/* 控制全局「呼吸感」背景漸層 (複用 Category Page 邏輯) */
 .gradient-background-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 150vh; /* 決定漸層延伸多長，可以根據內容長度微調 */
+  height: 150vh; /* 漸層延伸長度 */
   background: linear-gradient(180deg, #FCFCFC 0%, #EFECE6 50%, #FCFCFC 100%);
   z-index: 0;
   pointer-events: none;
 }
 
-/* 確保所有內容層級高於背景漸層 */
 .project-detail-content-wrapper {
   position: relative;
   z-index: 1;
 }
 
-/* --- 2. 頂部封面區 (Hero Section) --- */
+/* --- Hero 封面圖 (調整為不疊文字的純圖模式) --- */
 .detail-hero {
-  position: relative;
   width: 100%;
-  height: 70vh; /* 【微調點】封面圖佔螢幕的高度，建議 60vh - 80vh */
-  min-height: 450px;
+  height: 50vh; 
+  min-height: 400px;
   overflow: hidden;
+  background-color: #eee;
 }
 
 .hero-img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* 確保圖片不變形填滿 */
+  object-fit: cover;
   object-position: center;
 }
 
-/* 封面圖下方的文字保護漸層 */
-.hero-gradient-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 50%; /* 漸層向上延伸的範圍 */
-  background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.7) 100%);
-  display: flex;
-  align-items: flex-end;
-  padding: 0 15% 5rem 15%; /* 左右 padding 控制文字縮排，對齊內容的 70% */
+/* --- 標題資訊區 (移至圖片下方) --- */
+.detail-header-section {
+  width: 70%;
+  margin: 0 auto;
+  padding: 4rem 0 2rem 0;
+  text-align: left;
 }
 
 .hero-title {
-  color: #FFFFFF;
+  color: #313131;
   font-family: 'Manrope', sans-serif;
-  font-size: calc(2.8rem + 1.2vw); /* 響應式字級 */
+  font-size: calc(2.2rem + 0.5vw);
   font-weight: 800;
-  margin: 0;
-  letter-spacing: -1px;
+  margin-top: 2rem;
   line-height: 1.1;
+  letter-spacing: -1px;
 }
 
 .hero-subtitle {
-  color: rgba(255, 255, 255, 0.9);
+  color: #6a6a6a;
   font-family: 'Lora', serif;
-  font-size: 1.4rem;
+  font-size: 1.45rem;
   font-style: italic;
-  margin-top: 1rem;
+  margin: 1rem 0 0.5rem 0;
 }
 
-/* --- 3. 資訊區域 (Individual Contribution & Credits) --- */
+.hero-year {
+  color: #999;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+/* --- 製作資訊區 (Contribution & Credits) --- */
 .detail-meta-section {
-  width: 70%; /* 【微調點】控制桌機版的內容寬度 */
+  width: 70%;
   margin: 0 auto;
-  padding: 6rem 0; /* 區塊上下間距 */
+  padding: 3rem 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .meta-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 兩欄式排版 */
-  gap: 8rem; /* 兩欄之間的距離 */
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
 }
 
 .meta-label {
   display: block;
   font-family: 'Manrope', sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  color: #999;
+  color: #aaa;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
 }
 
 .meta-value {
   font-family: 'Lora', serif;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: #333;
   line-height: 1.6;
 }
 
-/* --- 4. 主內容區域 (影片、描述、截圖) --- */
+/* --- 主內容區 (影片、描述、截圖) --- */
 .detail-main-content {
-  width: 70%; /* 保持與 meta section 一致的寬度 */
+  width: 70%;
   margin: 0 auto;
   padding: 5rem 0 10rem 0;
   display: flex;
   flex-direction: column;
-  gap: 6rem; /* 【微調點】控制影片、文字、截圖區塊之間的垂直距離 */
+  gap: 6rem;
 }
 
-/* YouTube 影片容器 */
+/* YouTube 容器置中與比例 */
 .detail-video-box {
   width: 100%;
-  max-width: 1000px; /* 避免在寬螢幕過大 */
-  margin: 0 auto; /* 置中 */
-  aspect-ratio: 16 / 9; /* 維持 16:9 比例 */
+  max-width: 1000px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
   background-color: #000;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
 }
 
 .detail-video-box iframe {
@@ -130,17 +132,21 @@
   border: none;
 }
 
-/* 描述文字樣式 */
+/* 描述文字閱讀優化 */
 .detail-description {
-  max-width: 850px; /* 限制每行字數，提升閱讀性 */
-  margin: 0 auto; /* 文字區塊置中 */
+  max-width: 850px;
+  margin: 0 auto;
   font-family: 'Lora', serif;
   font-size: 1.25rem;
-  line-height: 2.2; /* 較鬆散的行高更具現代設計感 */
+  line-height: 2.2;
   color: #333;
 }
 
-/* 截圖清單 */
+.detail-description p {
+  margin-bottom: 2rem;
+}
+
+/* 截圖列表 */
 .detail-gallery {
   display: flex;
   flex-direction: column;
@@ -149,24 +155,26 @@
 }
 
 .gallery-img {
-  width: 100%; /* 填滿 70% 的父容器 */
+  width: 100%;
   height: auto;
   border-radius: 4px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.03); /* 輕微陰影 */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.02);
 }
 
-/* --- 5. 手機端響應式優化 (Mobile-First) --- */
+/* --- 📱 手機端響應式校準 --- */
 @media (max-width: 768px) {
-  
-  /* 手機版縮小 Hero 高度 */
   .detail-hero {
-    height: 55vh;
-    min-height: 380px;
+    height: 45vh;
   }
 
-  /* 標題在手機版要縮小，左右邊距減少 */
-  .hero-gradient-overlay {
-    padding: 0 1.5rem 4rem 1.5rem;
+  .detail-header-section,
+  .detail-meta-section,
+  .detail-main-content {
+    width: 90%; /* 手機端放寬比例 */
+  }
+
+  .detail-header-section {
+    padding: 2.5rem 0 1rem 0;
   }
 
   .hero-title {
@@ -174,109 +182,21 @@
   }
 
   .hero-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
-  /* 內容寬度改為 90%，避免手機端左右太擠 */
-  .detail-meta-section, 
-  .detail-main-content {
-    width: 90%;
-  }
-
-  /* 資訊區轉為單欄 */
   .meta-grid {
-    grid-template-columns: 1fr;
-    gap: 3rem;
+    grid-template-columns: 1fr; /* 單欄排版 */
+    gap: 2.5rem;
   }
 
-  /* 影片、文字、截圖間距縮小 */
   .detail-main-content {
     gap: 4rem;
-    padding-top: 3rem;
+    padding-top: 2rem;
   }
 
   .detail-description {
-    font-size: 1.15rem;
-    line-height: 1.8;
-  }
-}
-
-/* --- 手機端調整 --- */
-@media (max-width: 768px) {
-  /* 1. 調整背景漸層：讓它從 Hero 下方開始更有感，或者拉長它 */
-  .gradient-background-overlay {
-    height: 150vh; /* 增加長度，確保滑動時背景仍有質感 */
-    background: linear-gradient(180deg, #FCFCFC 0%, #EFECE6 30%, #FCFCFC 80%);
-  }
-
-  /* 2. Hero 區域：適應手機螢幕比例 */
-  .detail-hero {
-    height: 60vh; /* 稍微拉高，讓圖片更有張力 */
-    min-height: 400px;
-  }
-
-  /* 3. 標題與漸層：解決遮擋與對齊問題 */
-  .hero-gradient-overlay {
-    /* 增加底部 Padding，讓文字不要太貼邊 */
-    padding: 0 1.5rem 4rem 1.5rem; 
-    /* 確保文字在 Header 之下 */
-    justify-content: flex-end; 
-  }
-
-  .hero-title {
-    font-size: 2.4rem; /* 稍微調大，展現 Desktop-4 的大氣感 */
-    letter-spacing: -0.5px;
-    line-height: 1.1;
-  }
-
-  .hero-subtitle {
     font-size: 1.1rem;
-    margin-top: 0.8rem;
-    line-height: 1.4;
-  }
-
-  /* 4. 資訊區塊：緊湊排版 */
-  .detail-meta-section {
-    width: 100%;
-    padding: 4rem 1.5rem 2rem 1.5rem; /* 頂部加多一點間距與 Hero 隔開 */
-  }
-
-  .meta-grid {
-    grid-template-columns: 1fr; /* 單欄 */
-    gap: 2rem;
-  }
-
-  .meta-label {
-    margin-bottom: 0.4rem;
-    font-size: 0.75rem;
-  }
-
-  .meta-value {
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-
-  /* 5. 主內容區域：取消所有寬度限制 */
-  .detail-main-content {
-    width: 100%;
-    padding: 2rem 1.5rem 5rem 1.5rem;
-    gap: 3rem; /* 區塊間距縮小 */
-  }
-
-  /* 6. 描述文字：針對手機閱讀優化 */
-  .detail-description {
-    font-size: 1.15rem;
     line-height: 1.8;
-  }
-
-  .detail-description p {
-    margin-bottom: 1.5rem; /* 確保段落感明顯 */
-  }
-
-  /* 7. 圖片與影片：滿版呈現 */
-  .detail-video-box, .gallery-img {
-    width: 100%;
-    margin-bottom: 1.5rem;
-    border-radius: 2px; /* 手機上圓角小一點更利落 */
   }
 }
