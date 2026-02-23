@@ -15,7 +15,7 @@
             img: '/assets/Wan_2.png', 
             fullWidth: true,
             details: {
-              coverImg: '/assets/Wan_1.png', 
+              coverImg: '/assets/Wan_3.png', 
               subtitle: 'A magical puzzle adventure in the forest.',
               contribution: 'Lead Game Designer, Programmer',
               credits: 'Art: User A / Sound: User B',

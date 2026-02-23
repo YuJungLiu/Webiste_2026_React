@@ -13,6 +13,8 @@
     flex-direction: column;
     padding-top: 0.7rem;
     cursor: pointer;
+    text-decoration: none !important; /* 強制移除底線 */
+    color: inherit; /* 確保文字顏色不變藍 */
 }
 
 .project-image-wrapper {
@@ -62,6 +64,8 @@
 
     .project-item {
     padding-bottom: 3rem;
+    text-decoration: none !important; /* 強制移除底線 */
+    color: inherit; /* 確保文字顏色不變藍 */
 }
 }
 

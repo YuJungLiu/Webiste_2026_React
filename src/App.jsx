@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import CategoryPage from "./pages/CategoryPage"; 
+import ProjectDetail from "./pages/ProjectDetail";
 
 function App() {
   return (
@@ -25,7 +26,8 @@ function App() {
           {/* 通用分類路由 */}
           <Route path="/ux" element={<CategoryPage categoryType="ux" />} />
           <Route path="/game" element={<CategoryPage categoryType="game" />} />
-          {/* <Route path="/media" element={<CategoryPage categoryType="media" />} /> */}
+
+          <Route path="/project/:projectId" element={<ProjectDetail />} />
         </Routes>
         <Footer />
       </div>

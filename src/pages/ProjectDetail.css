@@ -1,114 +1,282 @@
 ﻿.project-detail-container {
   width: 100%;
-  background-color: #FCFCFC;
-  padding-bottom: 5rem;
+  position: relative;
+  background-color: #FCFCFC; /* 頁面基礎底色 */
+  overflow-x: hidden;
 }
 
-/* 封面圖與漸層 */
-.project-hero {
+/* 控制全局「呼吸感」背景漸層 (複用 Category Page 邏輯) */
+.gradient-background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150vh; /* 決定漸層延伸多長，可以根據內容長度微調 */
+  background: linear-gradient(180deg, #FCFCFC 0%, #EFECE6 50%, #FCFCFC 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* 確保所有內容層級高於背景漸層 */
+.project-detail-content-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+/* --- 2. 頂部封面區 (Hero Section) --- */
+.detail-hero {
   position: relative;
   width: 100%;
-  height: 60vh;
+  height: 70vh; /* 【微調點】封面圖佔螢幕的高度，建議 60vh - 80vh */
+  min-height: 450px;
   overflow: hidden;
 }
 
-.hero-image {
+.hero-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* 確保圖片不變形填滿 */
+  object-position: center;
 }
 
+/* 封面圖下方的文字保護漸層 */
 .hero-gradient-overlay {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 40%;
-  /* 延續 Category Page 的設計語言 */
-  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+  height: 50%; /* 漸層向上延伸的範圍 */
+  background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.7) 100%);
   display: flex;
   align-items: flex-end;
-  padding: 3rem 10%;
+  padding: 0 15% 5rem 15%; /* 左右 padding 控制文字縮排，對齊內容的 70% */
 }
 
 .hero-title {
-  color: white;
-  font-size: 3rem;
+  color: #FFFFFF;
+  font-family: 'Manrope', sans-serif;
+  font-size: calc(2.8rem + 1.2vw); /* 響應式字級 */
+  font-weight: 800;
   margin: 0;
+  letter-spacing: -1px;
+  line-height: 1.1;
 }
 
 .hero-subtitle {
-  color: rgba(255,255,255,0.8);
-  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: 'Lora', serif;
+  font-size: 1.4rem;
+  font-style: italic;
+  margin-top: 1rem;
 }
 
-/* 資訊區塊 */
-.project-info-section {
-  padding: 4rem 15%;
-  background-color: #EFECE6; /* 使用你現有的深色調作區隔 */
+/* --- 3. 資訊區域 (Individual Contribution & Credits) --- */
+.detail-meta-section {
+  width: 70%; /* 【微調點】控制桌機版的內容寬度 */
+  margin: 0 auto;
+  padding: 6rem 0; /* 區塊上下間距 */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.info-grid {
+.meta-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  grid-template-columns: 1fr 1fr; /* 兩欄式排版 */
+  gap: 8rem; /* 兩欄之間的距離 */
 }
 
-.info-item h3 {
-  font-size: 0.9rem;
-  color: #6A6A6A;
+.meta-label {
+  display: block;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #999;
   text-transform: uppercase;
-  margin-bottom: 0.5rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 1.5rem;
 }
 
-/* 主內容與 70% 寬度控制 */
-.project-main-content, .project-screenshots {
-  width: 70%;
-  margin: 4rem auto;
+.meta-value {
+  font-family: 'Lora', serif;
+  font-size: 1.15rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* --- 4. 主內容區域 (影片、描述、截圖) --- */
+.detail-main-content {
+  width: 70%; /* 保持與 meta section 一致的寬度 */
+  margin: 0 auto;
+  padding: 5rem 0 10rem 0;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 6rem; /* 【微調點】控制影片、文字、截圖區塊之間的垂直距離 */
 }
 
-.video-wrapper {
-  position: relative;
+/* YouTube 影片容器 */
+.detail-video-box {
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 的黃金比例 */
-  height: 0;
-  margin-bottom: 2rem;
+  max-width: 1000px; /* 避免在寬螢幕過大 */
+  margin: 0 auto; /* 置中 */
+  aspect-ratio: 16 / 9; /* 維持 16:9 比例 */
+  background-color: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
-.video-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
+.detail-video-box iframe {
   width: 100%;
   height: 100%;
-  border-radius: 12px; /* 稍微加一點圓角，看起來更現代 */
+  border: none;
 }
 
-.description-text {
-  font-size: 1.1rem;
-  line-height: 1.8;
+/* 描述文字樣式 */
+.detail-description {
+  max-width: 850px; /* 限制每行字數，提升閱讀性 */
+  margin: 0 auto; /* 文字區塊置中 */
+  font-family: 'Lora', serif;
+  font-size: 1.25rem;
+  line-height: 2.2; /* 較鬆散的行高更具現代設計感 */
   color: #333;
 }
 
-.screenshot-img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+/* 截圖清單 */
+.detail-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
 }
 
-/* 📱 手機端優化 (Mobile-First UX) */
+.gallery-img {
+  width: 100%; /* 填滿 70% 的父容器 */
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.03); /* 輕微陰影 */
+}
+
+/* --- 5. 手機端響應式優化 (Mobile-First) --- */
 @media (max-width: 768px) {
-  .project-hero { height: 40vh; }
-  .hero-title { font-size: 2rem; }
   
-  .info-grid { grid-template-columns: 1fr; }
-  
-  .project-main-content, .project-screenshots {
-    width: 90%; /* 手機端放寬到 90% 方便閱讀 */
-    margin: 2rem auto;
+  /* 手機版縮小 Hero 高度 */
+  .detail-hero {
+    height: 55vh;
+    min-height: 380px;
+  }
+
+  /* 標題在手機版要縮小，左右邊距減少 */
+  .hero-gradient-overlay {
+    padding: 0 1.5rem 4rem 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  /* 內容寬度改為 90%，避免手機端左右太擠 */
+  .detail-meta-section, 
+  .detail-main-content {
+    width: 90%;
+  }
+
+  /* 資訊區轉為單欄 */
+  .meta-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  /* 影片、文字、截圖間距縮小 */
+  .detail-main-content {
+    gap: 4rem;
+    padding-top: 3rem;
+  }
+
+  .detail-description {
+    font-size: 1.15rem;
+    line-height: 1.8;
+  }
+}
+
+/* --- 手機端調整 --- */
+@media (max-width: 768px) {
+  /* 1. 調整背景漸層：讓它從 Hero 下方開始更有感，或者拉長它 */
+  .gradient-background-overlay {
+    height: 150vh; /* 增加長度，確保滑動時背景仍有質感 */
+    background: linear-gradient(180deg, #FCFCFC 0%, #EFECE6 30%, #FCFCFC 80%);
+  }
+
+  /* 2. Hero 區域：適應手機螢幕比例 */
+  .detail-hero {
+    height: 60vh; /* 稍微拉高，讓圖片更有張力 */
+    min-height: 400px;
+  }
+
+  /* 3. 標題與漸層：解決遮擋與對齊問題 */
+  .hero-gradient-overlay {
+    /* 增加底部 Padding，讓文字不要太貼邊 */
+    padding: 0 1.5rem 4rem 1.5rem; 
+    /* 確保文字在 Header 之下 */
+    justify-content: flex-end; 
+  }
+
+  .hero-title {
+    font-size: 2.4rem; /* 稍微調大，展現 Desktop-4 的大氣感 */
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+    margin-top: 0.8rem;
+    line-height: 1.4;
+  }
+
+  /* 4. 資訊區塊：緊湊排版 */
+  .detail-meta-section {
+    width: 100%;
+    padding: 4rem 1.5rem 2rem 1.5rem; /* 頂部加多一點間距與 Hero 隔開 */
+  }
+
+  .meta-grid {
+    grid-template-columns: 1fr; /* 單欄 */
+    gap: 2rem;
+  }
+
+  .meta-label {
+    margin-bottom: 0.4rem;
+    font-size: 0.75rem;
+  }
+
+  .meta-value {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  /* 5. 主內容區域：取消所有寬度限制 */
+  .detail-main-content {
+    width: 100%;
+    padding: 2rem 1.5rem 5rem 1.5rem;
+    gap: 3rem; /* 區塊間距縮小 */
+  }
+
+  /* 6. 描述文字：針對手機閱讀優化 */
+  .detail-description {
+    font-size: 1.15rem;
+    line-height: 1.8;
+  }
+
+  .detail-description p {
+    margin-bottom: 1.5rem; /* 確保段落感明顯 */
+  }
+
+  /* 7. 圖片與影片：滿版呈現 */
+  .detail-video-box, .gallery-img {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    border-radius: 2px; /* 手機上圓角小一點更利落 */
   }
 }
