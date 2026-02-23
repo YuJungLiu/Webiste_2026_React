@@ -212,7 +212,7 @@
               ]
             }
           },
-          { id: 'plaantoholic', tag: 'Sustainable Green Roof Gardening Service', title: 'Plantoholic', img: '/assets/Pla_2.png', fullWidth: false,            
+          { id: 'plantoholic', tag: 'Sustainable Green Roof Gardening Service', title: 'Plantoholic', img: '/assets/Pla_2.png', fullWidth: false,            
             details: {
               coverImg: '/assets/Pla_3.png', 
               subtitle: 'Sustainable Green Roof Gardening Service (SPOSAD Hackathon)',
