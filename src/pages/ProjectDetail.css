@@ -232,7 +232,7 @@
   .meta-label {
     display: block;
     font-family: 'Manrope', sans-serif;
-    font-size: 0.65rem; 
+    font-size: 0.75rem; 
     font-weight: 700;
     color: #bbbbbb;
     margin-bottom: 0.5rem; /* 標籤與內容的距離 */
@@ -240,7 +240,7 @@
 
   .meta-value {
     font-family: 'Manrope', sans-serif;
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     color: #919191;
     line-height: 1.5;
   }
