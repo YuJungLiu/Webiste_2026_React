@@ -140,45 +140,45 @@
               ]
             }
           },
-          // { id: 'comic-chaos', tag: 'AI-Embbed Doodle Game', title: 'Comic Chaos', img: '/assets/Com_1.png', fullWidth: false,
-          //   details: {
-          //     coverImg: '/assets/Com_2.png', 
-          //     subtitle: 'AI-Embbed Doodle Game(Junction Hackathon)',
-          //     externalLink: 'https://shamitahmed.itch.io/comicchaos',
-          //     year: '2024',
-          //     contribution: 'Software development, UIUX Design',
-          //     credits: '劉有容(Liu Yu-Jung), Shamit Ahmed',
-          //     videoUrl: 'https://www.youtube.com/embed/joUPUe0u6KQ?si=ief1Sv4nWNNI2vwN', 
-          //     description: `You are a comic artist with zero drawing skill but an insane deadline. Your demanding boss expects brilliant work, and you've got nothing but shaky doodles. Submit your "AI-enhanced" pages before the buzzer sounds!
+          { id: 'moment', tag: 'Game Poem', title: 'Moment', img: '/assets/Fire_1.png', fullWidth: false, details: {
+              coverImg: '/assets/Fire_2.png', 
+              subtitle: 'Interactive Poem (Aalto School Project)',
+              externalLink: 'https://supermini-burger.itch.io/moment',
+              year: '2024',
+              contribution: 'Personal Project',
+              credits: '劉有容(Liu Yu-Jung)',
+              videoUrl: 'https://www.youtube.com/embed/V9bwmLYqEiE?si=HbrHJwKDrM7CfVrT', 
+              description: `In Moment, the night sky ignites with fireworks—bursts of fleeting beauty that dance beyond reach. No matter how you time the shot, their brilliance slips through, uncaptured, a reminder that some wonders defy the lens. 
               
-          //     Fool Your Boss, Save Your Job!`, 
-          //     screenshots: [
-          //     //   '/assets/portfolio/No_P_1.jpg',
-          //     //   '/assets/portfolio/No_P_2.jpg',
-          //     //   '/assets/portfolio/No_P_3.jpg',
-          //     //   '/assets/portfolio/No_P_4.jpg',
-          //     ]
-          //   }
-          // },
-          // { id: 'moment', tag: 'Game Poem', title: 'Moment', img: '/assets/Fire_1.png', fullWidth: false, details: {
-          //     coverImg: '/assets/Fire_2.png', 
-          //     subtitle: 'Interactive Poem (Aalto School Project)',
-          //     externalLink: 'https://supermini-burger.itch.io/moment',
-          //     year: '2024',
-          //     contribution: 'Personal Project',
-          //     credits: '劉有容(Liu Yu-Jung)',
-          //     videoUrl: 'https://www.youtube.com/embed/V9bwmLYqEiE?si=HbrHJwKDrM7CfVrT', 
-          //     description: `In Moment, the night sky ignites with fireworks—bursts of fleeting beauty that dance beyond reach. No matter how you time the shot, their brilliance slips through, uncaptured, a reminder that some wonders defy the lens. 
+              So why chase what can not be held? Set the camera aside, let your eyes drink in the spectacle, and etch each vivid instant into the quiet gallery of your mind, where the truest memories glow.`, 
+              screenshots: [
+              //   '/assets/portfolio/No_P_1.jpg',
+              //   '/assets/portfolio/No_P_2.jpg',
+              //   '/assets/portfolio/No_P_3.jpg',
+              //   '/assets/portfolio/No_P_4.jpg',
+              ]
+            }
+          },
+          { id: 'comic-chaos', tag: 'AI-Embbed Doodle Game', title: 'Comic Chaos', img: '/assets/Com_1.png', fullWidth: false,
+            details: {
+              coverImg: '/assets/Com_2.png', 
+              subtitle: 'AI-Embbed Doodle Game(Junction Hackathon)',
+              externalLink: 'https://shamitahmed.itch.io/comicchaos',
+              year: '2024',
+              contribution: 'Software development, UIUX Design',
+              credits: '劉有容(Liu Yu-Jung), Shamit Ahmed',
+              videoUrl: 'https://www.youtube.com/embed/joUPUe0u6KQ?si=ief1Sv4nWNNI2vwN', 
+              description: `You are a comic artist with zero drawing skill but an insane deadline. Your demanding boss expects brilliant work, and you've got nothing but shaky doodles. Submit your "AI-enhanced" pages before the buzzer sounds!
               
-          //     So why chase what can not be held? Set the camera aside, let your eyes drink in the spectacle, and etch each vivid instant into the quiet gallery of your mind, where the truest memories glow.`, 
-          //     screenshots: [
-          //     //   '/assets/portfolio/No_P_1.jpg',
-          //     //   '/assets/portfolio/No_P_2.jpg',
-          //     //   '/assets/portfolio/No_P_3.jpg',
-          //     //   '/assets/portfolio/No_P_4.jpg',
-          //     ]
-          //   }
-          // },
+              Fool Your Boss, Save Your Job!`, 
+              screenshots: [
+              //   '/assets/portfolio/No_P_1.jpg',
+              //   '/assets/portfolio/No_P_2.jpg',
+              //   '/assets/portfolio/No_P_3.jpg',
+              //   '/assets/portfolio/No_P_4.jpg',
+              ]
+            }
+          },
         ]
       }
     ]
