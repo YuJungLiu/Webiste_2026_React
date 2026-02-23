@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Analytics } from "@vercel/analytics/next"
+// import { Analytics } from "@vercel/analytics/next"
 import "./index.css";
 
 // 基礎組件
@@ -19,7 +19,6 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Analytics />
         <ScrollToTop />
         <MouseLens />
         <Header />      
