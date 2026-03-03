@@ -19,7 +19,7 @@
               subtitle: 'Mobile Indie Puzzle Game',
               externalLink: 'https://apps.apple.com/us/app/wando/id6480163998',
               year: '2024',
-              contribution: 'Game Direct (Game & Level, UIUX, Sound, Motion Design)',
+              contribution: 'Game Direction (Game & Level, UIUX, Sound, Motion Design)',
               credits: '劉有容(Liu Yu-Jung), 白雅云(Pai Ya-Yun), 何政勳(Ho Cheng-Hsun)',
               videoUrl: 'https://www.youtube.com/embed/GD-1PSTsYtg?si=mGDYdKCr_URmwZvR', 
               description: `“Wando” is a therapeutic and artistic puzzle game. The game is themed around nature and ancient civilizations, and players can embark on adventure with protagonist "Kgoro" to experience various puzzles. 

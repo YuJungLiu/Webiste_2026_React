@@ -10,7 +10,7 @@ const ProjectDetail = () => {
 const handleScrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth' // 這裡使用 smooth，因為是在同頁面內的導覽
+      behavior: 'smooth' 
     });
   };
 
@@ -77,7 +77,6 @@ const handleScrollToTop = () => {
             </div>
           )}
 
-          {/* --- 重點：更新後的描述渲染邏輯 --- */}
           <div className="detail-description">
             {details.description.split('\n\n').map((paragraph, i) => (
               <p key={i}>
